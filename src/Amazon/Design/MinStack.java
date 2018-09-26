@@ -29,8 +29,21 @@ minStack.getMin();   --> Returns -2.
  * 
  */
 public class MinStack {
+	
+	public static void main(String[] args){
+		
+		MinStack stack = new MinStack();
+		stack.push(-2);
+		stack.push(0);
+		stack.push(-3);
+		System.out.println(stack.getMin());
+		stack.pop();
+		System.out.println(stack.top());
+		System.out.println(stack.getMin());
+	}
+	
 	public Elem top;
-	 
+	
     /** initialize your data structure here. */
     public MinStack() {
  
@@ -44,7 +57,6 @@ public class MinStack {
             e.next = top;
             top = e;
         }
- 
     }
  
     public void pop() {
@@ -69,7 +81,8 @@ public class MinStack {
     }
 }
 class Elem{
-    public int value;
+   
+	public int value;
     public int min;
     public Elem next;
  
@@ -77,4 +90,5 @@ class Elem{
         this.value = value;
         this.min = min;
     }
+    
 }

@@ -34,7 +34,6 @@ public class AddTwoNumbers {
 		addNum.addTwoNumbers(firstList, secondList);
 		addNum.printList();
 		
-		
     }
 	public static void addTwoNumbers(Node firstList,Node secondList){
 		

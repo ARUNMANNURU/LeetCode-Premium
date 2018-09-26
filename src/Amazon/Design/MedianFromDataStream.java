@@ -35,6 +35,7 @@ findMedian() -> 2
  *
  */
 public class MedianFromDataStream {
+	
 	PriorityQueue<Integer> maxHeap;//lower half
     PriorityQueue<Integer> minHeap;//higher half
  

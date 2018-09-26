@@ -3,6 +3,8 @@
  */
 package Amazon.Design;
 
+import java.util.Scanner;
+
 /**
  * @author ArunMannuru
  *
@@ -74,6 +76,14 @@ public class TicTacToe {
         this.cols=new int[n];
     }
  
+    public static void main(String[] args){
+    	
+    	Scanner sc = new Scanner(System.in);
+    	int players = sc.nextInt();
+    	
+    	
+    }
+    
     /** Player {player} makes a move at ({row}, {col}).
         @param row The row of the board.
         @param col The column of the board.
@@ -83,7 +93,8 @@ public class TicTacToe {
                 1: Player 1 wins.
                 2: Player 2 wins. */
     public int move(int row, int col, int player) {
-        int val = (player==1?1:-1);
+      
+    	int val = (player==1?1:-1);
  
         rows[row]+=val;
         cols[col]+=val;

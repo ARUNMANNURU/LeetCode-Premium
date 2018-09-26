@@ -21,7 +21,7 @@ public class StockPurchase {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] prices = new int[]{10,20,20};
+		int[] prices = new int[]{10,20,20,30};
 		System.out.println(stockPurchase(prices));
 	}
 	public static int stockPurchase(int[] prices){

@@ -36,11 +36,18 @@ cache.get(4);       // returns 4
  * 
  */
 public class LRUCache {
+	
 	int capacity;
     HashMap<Integer, Node> map = new HashMap<Integer, Node>();
     Node head=null;
     Node end=null;
- 
+    public static void main(String[] args){
+    	
+    	LRUCache ob = new LRUCache(3);
+    	
+		
+
+    }
     public LRUCache(int capacity) {
         this.capacity = capacity;
     }
@@ -68,7 +75,7 @@ public class LRUCache {
         }else{
             end = n.pre;
         }
- 
+  
     }
  
     public void setHead(Node n){

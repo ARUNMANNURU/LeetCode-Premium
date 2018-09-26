@@ -31,18 +31,22 @@ public class ProductArrayExceptSelf {
 	}
 	public static void productArray(int[] arrNum){
 		int len = arrNum.length;
-		int[] result = new int[len]; // 1 2 3
-		result[len-1] = 1; // result[2] = 1;
-		for(int i=len-2; i >= 0; i--){   // 1 0
-			result[i] = result[i+1]*arrNum[i+1]; // res[1] = res[2]*res[2] = 9
-			  									 // res[0] = res[1]*res[1] = 4
- 		}
+		int[] result = new int[len]; 
 		int left = 1;
-		for(int i=0; i < len; i++){
-			result[i] = result[i]*left; // res[0] = res[0] * 1 = 4; res[1] = res[1]*1 = 9*2 = 18; res[2] = res[2]*2 = 
-			left = left*arrNum[i]; // left = 1*1; left = 1*2 = 2;
+		for(int i = 0; i < len; i++){
+			if(i > 0){
+				left = left*arrNum[i-1];
+			}
+			result[i]= left;
 		}
-		for(int x: result){
+		int right = 1;
+		for(int j = len-1; j >= 0; j--){
+			if(j < len-1){
+				right = right*arrNum[j+1];
+			}
+			result[j] *= right;
+		}
+		for(int x : result){
 			System.out.println(x);
 		}
 	}

@@ -11,14 +11,9 @@ import java.util.Stack;
  */
 /*
  * Binary Search Tree Iterator
-Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
-
-Calling next() will return the next smallest number in the BST.
-
-Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
-
-
- * 
+ * Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
+ * Calling next() will return the next smallest number in the BST.
+ * Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
  * 
  */
 /**
@@ -32,14 +27,15 @@ Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,
  */
 
 public class BSTIterator {
+	
 	static class TreeNode {
 	      int val;
-	      TreeNode left;
-	      TreeNode right;
+	      TreeNode left,right;
 	      TreeNode(int x) { 
 	    	  val = x; 
 	      }
-	      }
+	}
+	
 	Stack<TreeNode> stack;
  
 	public BSTIterator(TreeNode root) {

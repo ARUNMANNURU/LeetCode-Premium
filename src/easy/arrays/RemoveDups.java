@@ -25,24 +25,20 @@ public class RemoveDups {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arrA = new int[]{1,1,2};
+		int[] arrA = new int[]{1,2,3};
 		System.out.println(removeDups(arrA));
 	}
 	public static int removeDups(int[] nums){
-		// Length of an array.	
-		int length=nums.length;
-		// if array contains only one element case.
-	      if(length==0 || length==1) 
-	          return length;
-	      int i=1; 
-	      for(int j=1; j<length; j++) {
-	        if(nums[j]!=nums[j-1]){
-	          nums[i]=nums[j]; 
-	          i++; 
-	        }
-	      }
-	      if(i<length) 
-	          nums[i]='\0';
-	      return i; 
+		int len = nums.length;
+		int index = 1;
+		if(len < 2){
+			return len;
+		}
+		for(int i = 1; i < len; ++i){
+			if(nums[i] != nums[i-1]){
+				nums[index++] = nums[i];
+			}
+		}
+		return index;
 	}
 }

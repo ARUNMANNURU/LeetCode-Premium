@@ -26,20 +26,34 @@ public class DuplicateNumber {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arrA = {1,2,3,4,5,1};
-		int lenA = arrA.length;
-		duplicateNum(arrA,lenA);
-	}
-	public static void duplicateNum(int[] arrA,int lenA){
+		int[] arrA = {1,2,3,4,5,3};
+		int len = arrA.length-1;
+		int n = dupNum(arrA);
+		System.out.println(n - (len*(len+1))/2);
+		System.out.println(duplicateNum(arrA));
 		
-		if(lenA > 1){
-			int slow = arrA[0];
-			int fast = arrA[arrA[0]];
-			while(slow != fast){
-				slow = arrA[slow];
-				fast = arrA[arrA[fast]];
-			}
-		}
-	
 	}
+	public static int duplicateNum(int[] arrA){
+		int slow = 0, fast = 0, finder = 0;
+		while(true){
+			slow = arrA[slow];
+			fast = arrA[arrA[slow]];
+			if(slow == fast)
+				break;
+		}
+		while(true){
+			slow = arrA[slow];
+			finder = arrA[finder];
+			if(slow == finder)
+				return arrA[slow];
+		}
+	}
+	public static int dupNum(int[] arrA){
+		int sum = 0;
+		for(int x : arrA){
+			sum += x;
+		}
+		return sum;
+	}
+	
 }

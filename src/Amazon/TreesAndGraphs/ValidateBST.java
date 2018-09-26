@@ -48,13 +48,13 @@ public class ValidateBST {
  
     /* Returns true if given search tree is binary
        search tree (efficient version) */
-    boolean isBST(Node node)
-    {
+    boolean isBST(Node node){
+    	
         // traverse the tree in inorder fashion and
         // keep a track of previous node
-        if (node != null)
-        {
-            if (!isBST(node.left))
+        if (node != null){
+            
+        	if (!isBST(node.left))
                 return false;
  
             // allows only distinct values node

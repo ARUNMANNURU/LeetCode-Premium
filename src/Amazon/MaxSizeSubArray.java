@@ -38,16 +38,16 @@ public class MaxSizeSubArray {
 	}
 	public static int maxSubArrayLen(int[] nums, int k) {
         int sum = 0, max = 0;
-        int len = nums.length;
         HashMap<Integer,Integer> hMap = new HashMap<Integer,Integer>();
-        for(int i = 0; i < len; i++){
+        for(int i = 0; i < nums.length; i++){
         	sum = sum + nums[i];
         	if(sum == k)
         		max = i+1;
-        	else if(hMap.containsKey(sum - k))
-        			max = Math.max(max, i-hMap.get(sum-k));
-        	if(!hMap.containsKey(sum))
-        		hMap.put(sum,i);
+        	else if(hMap.containsKey(sum-nums[i])){
+        		max = Math.max(max, i - hMap.get(sum - k));
+                if (!hMap.containsKey(sum)) 
+                    hMap.put(sum, i);
+        	}
         }
 		return max;
     }

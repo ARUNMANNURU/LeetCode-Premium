@@ -10,13 +10,12 @@ package easy.arrays;
 /*
  * Rotate Array
  * Rotate an array of n elements to the right by k steps.
- * For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
+ * For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to 
+ * [5,6,7,1,2,3,4].
  * Note:
- * Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
- * [show hint]
- * Hint:
- * Could you do it in-place with O(1) extra space?
- * Related problem: Reverse Words in a String II
+ * Try to come up as many solutions as you can, 
+ * there are at least 3 different ways to solve this problem.
+ * 
  * 
  */
 public class RotateArray {
@@ -26,23 +25,27 @@ public class RotateArray {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arrA = new int[]{1,2,3,4,5,6,7};
+		int[] arr = {1,2,3,4,5,6,7};
 		int k = 3;
-		System.out.println(rotateArray(arrA,k));
+		int[] newArr = rotateArr(arr,k);
+		for(int x : newArr){
+			System.out.println(x);
+		}
 	}
-	public static void rotateArray(int[] arrA,int k){
-		int len = arrA.length;
-		reverseArray(arrA,0,len-1);
-		reverseArray(arrA,0,k);
-		reverseArray(arrA,k+1,len-1);
+	public static int[] rotateArr(int[] arr,int k){
+		int len = arr.length-1;
+		reverseArr(arr,0,len-k);
+		reverseArr(arr,len-k+1,len);
+		return reverseArr(arr,0,len);
 	}
-	public static void reverseArray(int[] arrA,int start,int end){
+	public static int[] reverseArr(int[] arr,int start,int end){
 		while(start < end){
-			int temp = arrA[start];
-			arrA[start] = arrA[end];
-			arrA[end] = temp;
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
 			start++;
 			end--;
 		}
+		return arr;
 	}
 }
